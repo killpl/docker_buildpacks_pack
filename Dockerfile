@@ -1,7 +1,5 @@
 FROM docker
 
-RUN apt-get update
-
 # Install additional requirements
 RUN apk add -y --update wget
 
