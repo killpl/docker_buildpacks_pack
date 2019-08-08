@@ -1,4 +1,4 @@
-FROM docker
+FROM docker:dind
 
 # Install additional requirements
 RUN apk add -y --update wget
@@ -9,4 +9,6 @@ RUN wget https://github.com/buildpack/pack/releases/download/v0.2.1/pack-v0.2.1-
     chmod +x pack && \
     mv pack /usr/bin/pack
 
-ENTRYPOINT ["/bin/ash", "-c", "sleep 100000000"] 
+ENTRYPOINT ["dockerd-entrypoint.sh"]
+
+CMD ["/bin/ash", "-c", "sleep 100000000"] 
