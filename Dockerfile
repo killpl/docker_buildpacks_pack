@@ -9,4 +9,4 @@ RUN wget https://github.com/buildpack/pack/releases/download/v0.2.1/pack-v0.2.1-
     chmod +x pack && \
     mv pack /usr/bin/pack
 
-ENTRYPOINT "sh -c 'while sleep 3600; do :; done'"
+ENTRYPOINT ["/bin/ash", "-c", "sleep 100000000"] 
